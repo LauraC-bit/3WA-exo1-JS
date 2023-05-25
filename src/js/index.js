@@ -71,3 +71,16 @@ let Tartonfion = {
 };
 
 console.log(Tartonfion);
+
+// TABLEAU ARRAY
+
+const array = [34, 87, 72, 12, 54];
+array.push(63);
+console.log(array);
+console.log(array.length);
+console.log(array[2]);
+
+const lengthArray = array.length - 1;
+
+console.log(array[lengthArray]);
+console.log(array[array.length - 1]);
