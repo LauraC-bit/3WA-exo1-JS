@@ -10,3 +10,14 @@ console.log(color);
 
 const msg = "bisous";
 console.log(msg);
+
+const a = 11 / "Salut";
+console.log(a);
+console.log(typeof a);
+
+const word1 = "j'adore";
+const word2 = "les chats";
+const space = " ";
+console.log(word1 + " " + word2);
+console.log(word1 + space + word2);
+console.log(`${word1} ${word2}`);
