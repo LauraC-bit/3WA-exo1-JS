@@ -21,3 +21,18 @@ const space = " ";
 console.log(word1 + " " + word2);
 console.log(word1 + space + word2);
 console.log(`${word1} ${word2}`);
+
+let results = new Date();
+console.log(results);
+
+let day = results.getDate();
+let month = results.getMonth();
+let year = results.getFullYear();
+
+const resultDate = `${day}-0${month + 1}-${year}`;
+
+console.log(resultDate);
+
+const decimal = 100 / 3;
+const roundedValue = Math.round(decimal);
+console.log(roundedValue);
