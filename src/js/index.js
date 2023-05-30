@@ -74,28 +74,28 @@ console.log(Tartonfion);
 
 // TABLEAU ARRAY
 
-const array = [34, 87, 72, 12, 54];
-array.push(63);
-console.log(array);
-console.log(array.length);
-console.log(array[2]);
+// const array = [34, 87, 72, 12, 54];
+// array.push(63);
+// console.log(array);
+// console.log(array.length);
+// console.log(array[2]);
 
-const lengthArray = array.length - 1;
+// const lengthArray = array.length - 1;
 
-console.log(array[lengthArray]);
-console.log(array[array.length - 1]);
+// console.log(array[lengthArray]);
+// console.log(array[array.length - 1]);
 
-let age = prompt("quel age avez vous?");
-if (age >= 18) {
-  console.log("t'es majeur");
-} else {
-  console.log("t'es mineur");
-}
+// let age = prompt("quel age avez vous?");
+// if (age >= 18) {
+//   console.log("t'es majeur");
+// } else {
+//   console.log("t'es mineur");
+// }
 
-let num = 23;
-let txt = "33";
+// let num = 23;
+// let txt = "33";
 
-console.log(txt + num);
+// console.log(txt + num);
 
 // -----------------------------------------------------------------
 
@@ -119,3 +119,59 @@ let car = {
 
 console.log(car);
 console.log(car.motor);
+
+// -----------------------------------------------------------------
+// const array = [34, 87, 72, 12, 54];
+// const arrayLength = array.length;
+
+// for (let i = 0; i < arrayLength; i++) {
+//   let arrayNumbers = array[i];
+//   console.log(arrayNumbers);
+// }
+
+// const array = [34, 87, 72, 12, 54];
+// const arrayLength = array.length;
+
+// let emptyArray = [];
+
+// for (let i = 0; i < arrayLength; i++) {
+//   let arrayNumbers = array[i];
+//   emptyArray = [array[i]];
+//   if (emptyArray > 40 && emptyArray % 2 === 0) {
+//     console.log(emptyArray + "px");
+//   }
+//   // console.log(arrayNumbers + "px");
+// }
+
+// -------------------------------------------------
+
+let array = [];
+const max = 200;
+const min = 1;
+
+let smaller = 200;
+let bigger = 1;
+// let array = getRandomInt();
+
+// function getRandomInt(min, max) {
+//   min = Math.ceil(2);
+//   max = Math.floor(195);
+//   return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
+
+for (let i = 0; i < 20; i++) {
+  const random = Math.floor(Math.random() * (max - min + 1)) + min;
+  array.push(random);
+}
+
+for (let i = 0; i < array.length; i++) {
+  const numbers = array[i];
+  if (numbers < smaller) {
+    smaller = numbers;
+  }
+  if (numbers > bigger) {
+    bigger = numbers;
+  }
+}
+console.log(`Le plus grand nombre est ${bigger}`);
+console.log(`Le plus petit nombre est ${smaller}`);
