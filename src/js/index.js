@@ -84,3 +84,38 @@ const lengthArray = array.length - 1;
 
 console.log(array[lengthArray]);
 console.log(array[array.length - 1]);
+
+let age = prompt("quel age avez vous?");
+if (age >= 18) {
+  console.log("t'es majeur");
+} else {
+  console.log("t'es mineur");
+}
+
+let num = 23;
+let txt = "33";
+
+console.log(txt + num);
+
+// -----------------------------------------------------------------
+
+let car = {
+  doors: 4,
+  brand: "honda",
+  color: "red",
+  motor: {
+    power: 7,
+    weight: 100,
+    type: "vapeur",
+  },
+  passenger: [
+    {
+      name: "gisèle",
+      age: 33,
+      email: "gisele.truc@car.com",
+    },
+  ],
+};
+
+console.log(car);
+console.log(car.motor);
