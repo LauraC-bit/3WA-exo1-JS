@@ -235,7 +235,6 @@ const firstname = [
 
 const func = (string) => {
   return "Mr " + string;
-  
 }
 
 
