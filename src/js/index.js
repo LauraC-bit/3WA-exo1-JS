@@ -178,11 +178,11 @@
 
 // -------------------------------------------------------------------
 
-const array = [34, 87, 72, 12, 54];
+// const array = [34, 87, 72, 12, 54];
 
-const double = (a) => {
-  return a * 2;
-};
+// const double = (a) => {
+//   return a * 2;
+// };
 
 // let doubleTab = [];
 
@@ -206,22 +206,47 @@ const double = (a) => {
 // let newArray = [arrayX2(array)];
 // console.log(newArray);
 
-const triple = (a) => {
-  return a * 3;
-};
+// const triple = (a) => {
+//   return a * 3;
+// };
 
-const tabFunc = (tab, func) => {
-  const newTab = [];
+// const tabFunc = (tab, func) => {
+//   const newTab = [];
 
-  for (let i = 0; i < tab.length; i++) {
-    const nbr = tab[i];
-    const newNbr = func(nbr);
-    newTab.push(newNbr);
-  }
-  return newTab;
-};
+//   for (let i = 0; i < tab.length; i++) {
+//     const nbr = tab[i];
+//     const newNbr = func(nbr);
+//     newTab.push(newNbr);
+//   }
+//   return newTab;
+// };
 
-const newTab = tabFunc(array, triple);
-console.log(newTab);
+// const newTab = tabFunc(array, triple);
+// console.log(newTab);
 
 // Transformer la fonction tabFunc ci-dessus pour prendre en 2eme parametre une fonction qui s'executera sur chacun des elements du tableau (a la place de la fonction double)
+
+// ------------------------------------------------------
+
+const firstname = [
+  "lucas", "georges", "alexis", "antoine", "alexandre"
+];
+
+
+const func = (string) => {
+  return "Mr " + string;
+  
+}
+
+
+const func2 = (array, funcs) => {
+  const array1 = []
+  for (let i = 0; i < array.length; i++) {
+    let rightFirstName = funcs(array[i]);
+    array1.push(rightFirstName);
+  }
+  return array1;
+}
+
+console.log(func2(firstname, func))
+
