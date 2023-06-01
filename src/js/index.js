@@ -252,12 +252,57 @@
 // const div = document.getElementById("div");
 // div.append("ul");
 
-const ul = document.createElement("ul");
+// -----------------------------------------------------------
+// squares entrainement
 
-for (let i = 1; i <= 10; i++) {
-  const li = document.createElement("li");
-  li.innerHTML = `Test ${i}`;
-  ul.append(li);
+const element = document.getElementById("squares");
+
+for (let i = 1; i < 7; i++) {
+  const squaress = document.createElement("div");
+  squaress.classList.add("square");
+  squaress.classList.add(`square--${i}`); //cette ligne à re expliquer, pas la logique du i.
+  // squaress.classList.add(`square`, `square--${i}`) - ou sur une seule ligne
+  // squaress.innerHTML = `Test ${i}`; soluce pas bonnne
+
+  const ul = document.createElement("ul");
+
+  for (let i = 1; i <= 10; i++) {
+    const li = document.createElement("li");
+    li.innerHTML = `Test ${i}`;
+    ul.append(li);
+    document.body.append(ul);
+  }
+
+  squaress.append(ul);
+
+  element.append(squaress);
+  // squaress.append(ul); soluce pas bonne
 }
 
-document.body.append(ul);
+// const a = document.querySelector(".squares div:first-child");
+// a.classList.add("square--1");
+
+// const b = document.querySelector(".squares div:nth-child(2)");
+// b.classList.add("square--2");
+
+// const c = document.querySelector(".squares div:nth-child(3)");
+// c.classList.add("square--3");
+
+// const d = document.querySelector(".squares div:nth-child(4)");
+// d.classList.add("square--4");
+
+// const e = document.querySelector(".squares div:nth-child(5)");
+// e.classList.add("square--5");
+
+// const f = document.querySelector(".squares div:last-child");
+// f.classList.add("square--6");
+
+// --------------
+//correction, si je voulais extraire la valeur de ma boucle for je mets a boucle dans une fonction, je return et je prends la valeur de cette fonction dans mon autre boucle for. On donne ensuite a la valeur de la boucle celle de la fonction, mais puis on la valeur de la boucle au html.
+
+const onClick = (event) => {
+  const liModified = document.getElementById("square");
+  liModified.style.display = "none";
+};
+
+element.addEventListener("click", onClick);

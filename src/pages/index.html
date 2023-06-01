@@ -5,10 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hello World</title>
+    <style>
+      .squares {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .square {
+        flex: 1 0;
+        border-radius: 8px;
+        min-width: calc(33% - 16px);
+        min-height: 100px;
+      }
+      .square--1 {
+        background-color: red;
+      }
+      .square--2 {
+        background-color: green;
+      }
+      .square--3 {
+        background-color: blue;
+      }
+      .square--4 {
+        background-color: yellow;
+      }
+      .square--5 {
+        background-color: purple;
+      }
+      .square--6 {
+        background-color: orange;
+      }
+    </style>
   </head>
   <body>
     <h1>Hello World heyyy</h1>
-    <div class="#div"></div>
+
+    <div id="squares" class="squares"></div>
     <script src="../js/index.js"></script>
   </body>
 </html>
