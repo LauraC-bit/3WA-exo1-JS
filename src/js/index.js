@@ -228,24 +228,36 @@
 
 // ------------------------------------------------------
 
-const firstname = [
-  "lucas", "georges", "alexis", "antoine", "alexandre"
-];
+// const firstname = ["lucas", "georges", "alexis", "antoine", "alexandre"];
 
+// const func = (string) => {
+//   return "Mr " + string;
+// };
 
-const func = (string) => {
-  return "Mr " + string;
+// const func2 = (array, funcs) => {
+//   const array1 = [];
+//   for (let i = 0; i < array.length; i++) {
+//     let rightFirstName = funcs(array[i]);
+//     array1.push(rightFirstName);
+//   }
+//   return array1;
+// };
+
+// console.log(func2(firstname, func));
+
+// ---------------------------------------------------------
+// entrainement html - js
+
+// const ul = document.createElement("ul");
+// const div = document.getElementById("div");
+// div.append("ul");
+
+const ul = document.createElement("ul");
+
+for (let i = 1; i <= 10; i++) {
+  const li = document.createElement("li");
+  li.innerHTML = `Test ${i}`;
+  ul.append(li);
 }
 
-
-const func2 = (array, funcs) => {
-  const array1 = []
-  for (let i = 0; i < array.length; i++) {
-    let rightFirstName = funcs(array[i]);
-    array1.push(rightFirstName);
-  }
-  return array1;
-}
-
-console.log(func2(firstname, func))
-
+document.body.append(ul);
