@@ -1,3 +1,11 @@
+
+import data from "../assets/wordlist.json" assert { type: "json" };
+
+let words = data.words;
+
+console.log(words);
+
+
 // const x = "13.25px";
 // const y = false;
 // const z = -654 / 6;
@@ -300,9 +308,109 @@ for (let i = 1; i < 7; i++) {
 // --------------
 //correction, si je voulais extraire la valeur de ma boucle for je mets a boucle dans une fonction, je return et je prends la valeur de cette fonction dans mon autre boucle for. On donne ensuite a la valeur de la boucle celle de la fonction, mais puis on la valeur de la boucle au html.
 
-const onClick = (event) => {
-  const liModified = document.getElementById("square");
-  liModified.style.display = "none";
-};
+// const onClick = (event) => {
+//   const liModified = document.getElementById("square");
+//   liModified.style.display = "none";
+// };
 
-element.addEventListener("click", onClick);
+// element.addEventListener("click", onClick);
+
+// ul.id = "list" dans une boucle,  -> `list--${i}`; on a le droit de mettre le i en parametre d'une fonction pour le récupérer ailleurs.
+
+// correction
+
+// div.addEvenListener("click", (event) => {
+//   const target = event.target;
+//   //console.dir(target);
+  
+//   let ul;
+
+
+//   if (target.localName === "div") {
+//     ul = target.firstChild;
+//   } else if (target.localName === "li") {
+//     ul = target.parentNode;
+//   } else {
+//     ul = target;
+//   }
+
+//   if (ul) {
+//     ul.remove();
+//   }
+// })
+
+// tout ça a placer dans le boucle ou div est défini
+
+//----------------------------------------------------
+
+const generate = () => {
+
+
+  let sentence = "";
+
+
+  let randomi = Math.floor(Math.random() * (8 - 4) + 4);
+
+
+  for (let i = 1; i < randomi; i++) {
+
+    let random = Math.floor(Math.random() * (words.length - 0) + 0);
+    let word = words[random];
+    sentence = sentence + word + " ";
+  
+  }
+  return sentence
+
+}
+
+const sentenceButton = document.createElement("button");
+sentenceButton.innerHTML = "Generate a sentence";
+
+const body = document.querySelector("body");
+body.append(sentenceButton);
+
+
+const sentenceP = document.createElement("p");
+sentenceP.id = "sentenceP";
+body.append(sentenceP);
+
+sentenceButton.addEventListener("click", (clickP) => {
+  // p.innerHTML = sentence;
+  let phrase = generate();
+  document.getElementById("sentenceP").innerHTML = phrase; 
+}) 
+
+// generer un mot aleatoire, creer une liste avec toutes les lettres, un mot entre 3 et 7 lettres; pui scréer un bounton add html cliquez sur le obuton genere le mot;
+
+const generateWord = () => {
+
+  const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+  let finishWord = "";
+
+  let randomword = Math.floor(Math.random() * (8 - 4) + 4);
+
+  for (let i = 1; i < randomword; i++) {
+    let random = Math.floor(Math.random() * (alphabet.length - 0) + 0);
+    let word = alphabet[random];
+    finishWord = finishWord + word;
+  }
+  return finishWord
+}
+
+const button = document.createElement("button");
+
+button.innerHTML = "Generate a word";
+body.append(button);
+
+
+const p = document.createElement("p");
+p.id = "wordP";
+body.append(p);
+
+button.addEventListener("click", (clickP) => {
+  
+  document.getElementById("wordP").innerHTML = generateWord();
+})
+
+
